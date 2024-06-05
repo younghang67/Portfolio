@@ -6,6 +6,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --color-accent: #4f46e5;
+  --color-hovered: #5c55e2;
+  --color-heading: #1c1c1c;
+  --color-dark-text: #222222;
+  --color-light-text: #efe7e7;
+  --color-highlight-text: #515151;
+  --lg_font: 3.125rem;
+  --md_font: 1.4375rem;
+  --sm_font: 1.125rem;
+  --xs_font: 0.9375rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,16 +28,17 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-end-rgb));
+  font-weight: 400;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.text-hover > *:hover {
+  color: var(--color-accent);
+  transition: ease-in-out 300ms;
 }
